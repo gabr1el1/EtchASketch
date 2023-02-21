@@ -1,3 +1,4 @@
+const container = document.querySelector('.container');
 //let myClassRule = document.styleSheets[0].cssRules[8]; //marked class
 const btnChangeGrid = document.querySelector(".change-grid");
 btnChangeGrid.addEventListener('click',changeGrid);
@@ -5,6 +6,13 @@ const rowsInput = document.querySelector(".input-rows");
 const boxesInput = document.querySelector(".input-boxes");
 rowsInput.value = "16";
 boxesInput.value = "16";
+let draw = false;
+container.addEventListener('mousedown',function(){
+    draw = true;
+});
+container.addEventListener('mouseup',function(){
+    draw = false;
+});
 function changeGrid(){
     if(rowsInput.value=="" || boxesInput==""){
         alert("Values must not be empty");
@@ -21,7 +29,7 @@ function changeGrid(){
     }
 }
 function createGrid(rows, boxes){
-    const container = document.querySelector('.container');
+    
     container.innerHTML = "";
     //We create the rows of divs
     for(let i=0; i<rows;i++){
@@ -38,12 +46,15 @@ function createGrid(rows, boxes){
     }
 }
 function changeColorMouseOver(event){
-    const box = event.target;
-    let red = Math.floor(Math.random() * (255 - 0) + 0); 
-    let green = Math.floor(Math.random() * (255 - 0) + 0); 
-    let blue = Math.floor(Math.random() * (255 - 0) + 0); 
-    box.setAttribute('style',`background-color: rgb(${red}, ${green}, ${blue})`);
+    if(draw){
+        const box = event.target;
+        let red = Math.floor(Math.random() * (255 - 0) + 0); 
+        let green = Math.floor(Math.random() * (255 - 0) + 0); 
+        let blue = Math.floor(Math.random() * (255 - 0) + 0); 
+        box.setAttribute('style',`background-color: rgb(${red}, ${green}, ${blue})`);
+    }
+    
     //myClassRule.style.backgroundColor = "rgb(x, y, z)";
-    box.classList.add("marked");
+    //box.classList.add("marked");
 }
 createGrid(16,16);
