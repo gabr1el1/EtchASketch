@@ -37,15 +37,15 @@ body{
     flex: 1;
 }
 .user-grid *{
-    height: 45%;
     font-size: 1rem;
     padding: 5px;
 }
 .user-grid button{
-    white-space: nowrap;
     background-color: blueviolet;
     color: white;
     font-weight: bolder;
+    font-size: 100%;
+    overflow: hidden;
     width: 10%;
 }
 .container{
