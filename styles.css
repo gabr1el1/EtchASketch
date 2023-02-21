@@ -36,18 +36,22 @@ body{
 .user-grid input{
     flex: 1;
 }
+.user-grid *{
+    height: 45%;
+    font-size: 1rem;
+    padding: 5px;
+}
 .user-grid button{
-    padding: 10px;
+    white-space: nowrap;
     background-color: blueviolet;
     color: white;
     font-weight: bolder;
-    font-size: medium;
     width: 10%;
 }
 .container{
     display: flex;
     flex-direction: column;
-    flex:1;
+    flex:4;
     box-shadow: -5px 10px 8px rgb(42, 33, 33);
     /* padding: 10px; */
     /* background-color: white; */
