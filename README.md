@@ -1,1 +1,3 @@
 # EtchASketch
+
+Shows DOM manipulation
