@@ -39,6 +39,7 @@ function createGrid(rows, boxes){
         for(let j=0;j<boxes;j++){
             let box = document.createElement("div");
             box.classList.add("box");
+            box.setAttribute('draggable',false);
             box.addEventListener('mouseover',changeColorMouseOver);
             row.appendChild(box);
         }
